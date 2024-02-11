@@ -1,0 +1,600 @@
+<audio id="notification" src="assets/Chris_Mix_Chipi_Chipi_Chapa_Chapa_Dubi_Dubi_Daba_Daba-651057.mp3" muted="true"
+    autoplay="true"></audio>
+<audio id="diednotification" src="assets/dark-souls-_you-died_-sound-effect-from-youtube.mp3" muted="true"
+    autoplay="true"></audio>
+<audio id="answer" src="assets/super-mario-coin-sound.mp3" muted="true"
+    autoplay="true"></audio>
+    <audio id="answer2" src="assets/anime-wow-sound-effect.mp3" muted="true"
+    autoplay="true"></audio>
+
+<!-- 
+<div class="container-fluid">
+  <div [class.custom-marquee]="shouldBounce">
+    <div class="marquee__group">
+      
+      <img src='assets/IMG_20240205_120114.jpg' alt=''>
+      <img src='assets/IMG_20231125_021953.jpg' alt=''>
+      <img src='assets/IMG_20231022_210605.jpg' alt=''>
+      <img src='assets/IMG_20231221_165327.jpg' alt=''>
+      <img src='assets/IMG_20240205_120037.jpg' alt=''>
+      
+      
+    </div>
+    </div>
+</div> -->
+
+
+<div class="container-fluid" *ngIf="showfirstpage">
+    <div class="row" style="height: 40vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col">
+            <!-- content here -->
+            <div id="buttonDiv" class="col" style="font-family: Comic Neue;
+      color: mediumvioletred;">
+                <span>
+                    <h1 style="font-weight: bold;">Before you start this (really) hard and punishing test, ask yourself
+                        - ARE YOU READY !??</h1>
+                    <h6 style="font-weight: bold;">Click on the images, Duh.</h6>
+                </span>
+
+                <!-- <h1 style="font-weight: bold;">If you fail, you await death in the worse way imaginable. If you pass, your life will be spared and a gift awaits you.</h1> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="height: 40vh;">
+        <!-- Mid row with 40% vertical height -->
+        <div id="buttonDiv" class="col" style="font-family: Comic Neue;">
+            <div class="marquee__group">
+
+                <a href="#" (click)="readyselected()"><img src='assets/im-ready.jpg' alt=''></a>
+            </div>
+        </div>
+        <div id="buttonDiv" class="col" style=" font-family: Comic Neue;color: red;">
+            <div class="marquee__group">
+
+                <a href="#" (click)="showmsg()"><img src='assets/scared.jpg' alt=''></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 10vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Last row with 20% vertical height -->
+        <div id="flexclass" class="col" style="background-color: aliceblue; font-family: Comic Neue; color: red;">
+            <h5 style="font-weight: bold;">PS: If you fail, you await death in the worse way imaginable :D . If you
+                pass, your life will be spared and you will be rewarded. :)</h5>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid" *ngIf="showfinalpage">
+    <div class="row" style="height: 40vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div *ngIf="showstuff" class="col">
+            <div [class.custom-marquee]="shouldBounce">
+                <div class="marquee__group">
+
+                    <img src='assets/IMG_20240205_120114.jpg' alt=''>
+                    <img src='assets/IMG_20231125_021953.jpg' alt=''>
+                    <img src='assets/IMG_20231022_210605.jpg' alt=''>
+                    <img src='assets/IMG_20231221_165327.jpg' alt=''>
+                    <img src='assets/IMG_20240205_120037.jpg' alt=''>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="height: 10vh; align-content: center;">
+        <!-- Mid row with 20% vertical height -->
+        <div *ngIf="showstuff == false" id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-danger btn-lg"
+                (click)="showAll()">Danger Dont Press</button>
+        </div>
+        <div *ngIf="showstuff" id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-info btn-lg"
+                (click)="togglesong()">Intentional button to play/stop the music because it could get annoying after a
+                while (based on true life events)</button>
+        </div>
+    </div>
+
+    <div class="row" style="height: 10vh; align-content: center;">
+        <!-- Mid row with 20% vertical height -->
+        <div *ngIf="showstuff" id="" class="col" style="background-color: aliceblue; font-family: Comic Neue;">
+            <h3>Thanks for participating in this year's Valentines day quiz! You have won an unlimited term of
+                Vivo&#8482; subscription :3) I love you and see you on Valentine's day ❤️</h3>
+        </div>
+    </div>
+
+    <div class="row" style="height: 40vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Last row with 40% vertical height -->
+        <div *ngIf="showstuff" class="col">
+            <div class="marquee__group">
+
+                <img src='assets/chipi-chipi-chapa-chapa.gif' alt=''>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid" *ngIf="showdeathpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col">
+            <!-- content here -->
+            <div class="marqueegroupwithoutcurve">
+
+                <img src='assets/peppapig.jpg' alt=''>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+        <div id="buttonDiv" class="col" style=" font-family: Comic Neue;color: red;">
+            <div class="marquee__group">
+
+                <a href="#"><img src='assets/you died.gif' alt=''></a>
+            </div>
+
+        </div>
+        <div id="buttonDiv" class="col" style="font-family: Comic Neue;">
+            <span>
+                <h2 class="display-3" style="font-weight: bold;">You have lost. You were killed by peppa pig</h2>
+                <h5>Reload to restart the test.</h5>
+            </span>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid" *ngIf="showsecondpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">What was the highlight object of your
+                    second date with Vivo&#8482;?</h2>
+                <h5>Too easy huh ? Just you wait 😈</h5>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Blumenkohl</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Zwiebel</button>
+        </div>
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Paprika</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showthird()">Kürbis</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Aubergine</button>
+        </div>
+    </div>
+
+
+</div>
+
+
+<div class="container-fluid" *ngIf="showthirdpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">What is Vivo&#8482;'s favourite movie
+                    trilogy - apart from LOTR and Dark Knight Trilogy ?</h2>
+                <h5>You should know this 😈</h5>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">The
+                X-Men</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Evil
+                Dead trilogy</button>
+        </div>
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showfourth()">The Matrix trilogy</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Back
+                to the future</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">The
+                Bourne trilogy</button>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="container-fluid" *ngIf="showfourthpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">What is Vivo&#8482;'s favourite kind of
+                    pancake ?</h2>
+                <h5> He has told this several times and also recently 😈</h5>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Naan</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">American Pancake</button>
+        </div>
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Deutsche Pfannkuchen</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Currywurst</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showfifth()">Dosa</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid" *ngIf="showfifthpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">What is Vivo&#8482;'s shoe size ?</h2>
+                <h5> He knows yours 😈</h5>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">44</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">46</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showsixth()">45</button>
+        </div>
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">43</button>
+        </div>
+
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">69</button>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container-fluid" *ngIf="showsixthpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">What is the name of the dragon which
+                    Vivo&#8482; was trying to breed recently ?</h2>
+                <h5> There's no way you don't know this 😈</h5>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Cosmic detention dragon</button>
+        </div>
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showseventh()">Cosmic detonation dragon</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Cosmic penile dragon</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Cosmopolitan dragon</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Korean soccer dragon</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="container-fluid" *ngIf="showseventhpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">What is Vivo&#8482;'s favourite
+                    Whatsapp sticker from the following ?</h2>
+                <h5> An easy one 😚</h5>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Salad
+                but la is silent</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Hallo
+                pulici and Nunununu cats</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Crying Pepe</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Doge
+                with the heart</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showeighth()">The cutie with the Kürbis</button>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container-fluid" *ngIf="showeighthpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">A burgler broke into Vivo&#8482;'s
+                    apartment and stole all the chairs. You don't like standing for too long. What will you do ? </h2>
+                <h5> You know the answer, and so do I 😇</h5>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Sit
+                on the ground</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Sit
+                on the bed</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showninth()">Sit on his face</button>
+        </div>
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Sit
+                on the couch</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="lost()">Continue standing</button>
+        </div>
+
+    </div>
+
+</div>
+<div class="container-fluid" *ngIf="showninthpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">When Vivo&#8482; was reading<em>Der
+                        Kleine Prinz</em>, what character do you think made him think of you ? </h2>
+                <h5>:)</h5>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">The
+                Narrator</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Der
+                Fuchs 🦊</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Die
+                Schlange 🐍</button>
+        </div>
+
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">Die
+                Rosen im Rosengarten</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showtenth()">Die Blume 🌹</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container-fluid" *ngIf="showtenthpage">
+    <div class="row" style="height: 50vh;    display: flex;
+    justify-content: center;
+    align-items: center;">
+        <!-- Top row with 40% vertical height -->
+        <div class="col" style="font-family: Comic Neue;">
+            <!-- content here -->
+            <span>
+                <h2 class="display-4" style="font-weight: bold; color: crimson;">Will you be my Valentine for the
+                    upcoming Valentine's day ?💐</h2>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row" style="height: 50vh;">
+        <!-- Mid row with 40% vertical height -->
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg"
+                (click)="showfinal()">YES 😚</button>
+        </div>
+
+        <!-- Mid row with 20% vertical height -->
+        <div id="buttonDiv" class="col">
+            <button type="button" style="font-family: Comic Neue;" class="btn btn-success btn-lg" (click)="lost()">NO
+                😑</button>
+        </div>
+    </div>
+
+</div>
